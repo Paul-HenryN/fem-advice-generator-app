@@ -1,0 +1,25 @@
+/* Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom properties */
+:root {
+    /* Colors */
+    --clr-primary: hsl(193, 38%, 86%);
+    --clr-accent:  hsl(150, 100%, 66%);
+    --clr-neutral-300: hsl(217, 19%, 38%);
+    --clr-neutral-200: hsl(217, 19%, 24%);
+    --clr-neutral-100: hsl(218, 23%, 16%);
+
+    /* Typography */
+    --fs-neutral: 1.75rem;
+    --fs-1: calc(var(--fs-neutral) - 0.5rem);
+    --ff: 'Manrope', sans-serif;
+    --fw: 800;
+}
+
+/* Global styles */
+

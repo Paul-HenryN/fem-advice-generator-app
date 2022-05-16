@@ -16,10 +16,27 @@
 
     /* Typography */
     --fs-neutral: 1.75rem;
-    --fs-1: calc(var(--fs-neutral) - 0.5rem);
+    --fs-1: calc(var(--fs-neutral) - 0.9rem);
+
     --ff: 'Manrope', sans-serif;
     --fw: 800;
 }
 
 /* Global styles */
+body {
+    min-height: 100vh;
+    color: var(--clr-primary);
+    font-family: var(--ff);
+    font-weight: var(--fw);
+    background-color: var(--clr-neutral-100);
+    font-size: var(--fs-neutral);
+    padding-inline: 5%;
+}
+
+h1 {
+    color: var(--clr-accent);
+    font-size: var(--fs-1);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
 

@@ -4,6 +4,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+img {
+    display: block;
+    max-width: 100%;
+}
 
 /* Custom properties */
 :root {
@@ -16,7 +20,7 @@
 
     /* Typography */
     --fs-neutral: 1.75rem;
-    --fs-1: calc(var(--fs-neutral) - 0.9rem);
+    --fs-1: calc(var(--fs-neutral) - 1rem);
 
     --ff: 'Manrope', sans-serif;
     --fw: 800;
@@ -31,12 +35,50 @@ body {
     background-color: var(--clr-neutral-100);
     font-size: var(--fs-neutral);
     padding-inline: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
     color: var(--clr-accent);
     font-size: var(--fs-1);
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.3em;
+}
+
+/* Components */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1em;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding-inline: 0.6em;
+    padding-block: 1.5em 2.3em;
+    max-width: 30rem;
+    position: relative;
+}
+
+.card--dark {
+    background-color: var(--clr-neutral-200);
+}
+
+.btn {
+    padding: 1.25em;
+    border: none;
+    outline: none;
+}
+.btn--round {
+    border-radius: 100%;
+}
+
+.card__btn {
+    background-color: var(--clr-accent);
+    position: relative;
+    position: absolute;
+    bottom: -28px;
 }
 

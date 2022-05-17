@@ -82,14 +82,17 @@ h1 {
 }
 
 .card__btn {
-    background-color: var(--clr-accent);
     position: relative;
     position: absolute;
     bottom: -28px;
     transition: box-shadow 0.25s ease;
 }
-.card__btn:hover,
-.card__btn:focus-visible {
+
+.btn--neon {
+    background-color: var(--clr-accent);
+}
+.btn--neon:hover,
+.btn--neon:focus-visible {
     box-shadow: 0 0 30px var(--clr-accent);
 }
 
@@ -97,17 +100,7 @@ h1 {
     display: none;
 }
 
-@media screen and (min-width: 500px) {
-    .divider--desktop {
-        display: block;
-    }
-    .divider--mobile {
-        display: none;
-    }
-}
-
 #generate-btn {
-    animation-name: spin;
     animation-duration: 1s;
     animation-iteration-count: infinite;
 }

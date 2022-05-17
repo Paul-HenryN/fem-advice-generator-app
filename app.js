@@ -4,11 +4,11 @@ const adviceText = document.getElementById("advice-text");
 const generateBtn = document.getElementById("generate-btn");
 
 function startLoadingAnimation() {
-    generateBtn.style.animationName = "spin";
+  generateBtn.style.animationName = "spin";
 }
 
 function stopLoadingAnimation() {
-    generateBtn.style.animationName = "ssd";
+  generateBtn.style.animationName = "none";
 }
 
 // Send Http request
@@ -17,13 +17,8 @@ function request(url, callback) {
   xhr.open("GET", url, true);
 
   xhr.onreadystatechange = () => {
-    if(xhr.readyState === 4 && xhr.status === 200) {
-        setTimeout(() => {
-            callback(JSON.parse(xhr.response));
-            stopLoadingAnimation();
-            generateBtn.style.display = "block";
-            // generateBtn.style.transform = "scaleY(1)";
-        }, 1000);
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      callback(JSON.parse(xhr.response));
     }
   };
 
@@ -33,10 +28,13 @@ function request(url, callback) {
 // Generate advice
 function generateAdvice() {
   const url = "https://api.adviceslip.com/advice";
-
+  
   request(url, (response) => {
-    adviceId.innerHTML = response.slip.id;
-    adviceText.innerHTML = response.slip.advice;
+    setTimeout(() => {
+      adviceId.innerHTML = response.slip.id;
+      adviceText.innerHTML = response.slip.advice;
+      stopLoadingAnimation();
+    }, 1000);
   });
 
   startLoadingAnimation();
@@ -44,4 +42,3 @@ function generateAdvice() {
 
 generateAdvice();
 generateBtn.onclick = generateAdvice;
-

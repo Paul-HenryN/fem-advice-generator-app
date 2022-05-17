@@ -34,23 +34,25 @@
 
         <q id="advice-text"> </q>
 
-        <img
-          src="./images/pattern-divider-mobile.svg"
-          class="divider--mobile"
-          alt=""
-        />
-        <img
-          src="./images/pattern-divider-desktop.svg"
-          alt=""
-          class="divider--desktop"
-        />
+        <picture aria-label="Section divider">
+          <source
+            media="(max-width:500px)"
+            srcset="./images/pattern-divider-mobile.svg"
+            alt=""
+          />
 
-        <button
-          class="btn btn--round card__btn"
+          <img
+            src="./images/pattern-divider-desktop.svg"
+            alt=""
+          />
+        </picture>
+
+        <button 
+          class="btn btn--round btn--neon card__btn"
           id="generate-btn"
           title="Generate advice"
         >
-          <img src="./images/icon-dice.svg" class="dice-icon" alt="" />
+          <img src="./images/icon-dice.svg" alt="" />
         </button>
       </div>
     </main>
